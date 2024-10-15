@@ -32,8 +32,3 @@ while registrando:
         'monto_declarar': monto_declarar,
         'origen_fondos': origen_fondos
     }
-
-    contribuyentes.append(contribuyente)
-
-    continuar = input("¿Desea registrar otro contribuyente? (S/N): ").lower()
-    registrando = continuar == 's' 
