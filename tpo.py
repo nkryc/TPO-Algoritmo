@@ -1,15 +1,22 @@
+from datetime import datetime
+
+contribuyentes = []
+registrando = True 
+
 while registrando:
     print("\n--- Registro de Contribuyente ---")
     dni = input("DNI: ")
     apellido = input("Apellido: ")
     nombre = input("Nombre: ")
+
     fecha_nacimiento_str = input("Fecha de nacimiento (DD/MM/AAAA): ")
-    fecha_nacimiento = convertir_fecha(fecha_nacimiento_str)
+    fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, "%d/%m/%Y")
     edad = datetime.today().year - fecha_nacimiento.year
 
     profesion = input("Profesión: ")
+
     fecha_declaracion_str = input("Fecha de declaración (DD/MM/AAAA): ")
-    fecha_declaracion = convertir_fecha(fecha_declaracion_str)
+    fecha_declaracion = datetime.strptime(fecha_declaracion_str, "%d/%m/%Y")
 
     monto_declarar = float(input("Monto a declarar: "))
     origen_fondos = input("Origen de los fondos: ")
@@ -29,4 +36,4 @@ while registrando:
     contribuyentes.append(contribuyente)
 
     continuar = input("¿Desea registrar otro contribuyente? (S/N): ").lower()
-    registrando = continuar == 's'
+    registrando = continuar == 's' 
