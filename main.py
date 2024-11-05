@@ -14,14 +14,14 @@ def main():
         monto_a_declarar = float(input("Ingrese Monto a Declarar: "))
         origen_fondos = input("Ingrese Origen de los Fondos: ")
 
-        # Agregar contribuyente usando la función
+        # Recoge la informacion
         funciones.agregar_contribuyente(dni, apellido, nombre, edad, fecha_nacimiento, profesion, fecha_declaracion, monto_a_declarar, origen_fondos)
 
         continuar = input("¿Desea ingresar otro contribuyente? (s/n): ")
         if continuar.lower() != 's':
             break
 
-    # Calcular y mostrar las estadísticas
+    # Calcula y muestra las estadisticas
     funciones.calcular_estadisticas()
 
 if __name__ == "__main__":

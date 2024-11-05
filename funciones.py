@@ -2,52 +2,52 @@ import listas
 
 def agregar_contribuyente(dni, apellido, nombre, edad, fecha_nacimiento, profesion, fecha_declaracion, monto_a_declarar, origen_fondos):
    
-    datos.dni_list.append(dni)
-    datos.apellido_list.append(apellido)
-    datos.nombre_list.append(nombre)
-    datos.edad_list.append(edad)
-    datos.fecha_nacimiento_list.append(fecha_nacimiento)
-    datos.profesion_list.append(profesion)
-    datos.fecha_declaracion_list.append(fecha_declaracion)
-    datos.monto_a_declarar_list.append(monto_a_declarar)
-    datos.origen_fondos_list.append(origen_fondos)
+    listas.dni_list.append(dni)
+    listas.apellido_list.append(apellido)
+    listas.nombre_list.append(nombre)
+    listas.edad_list.append(edad)
+    listas.fecha_nacimiento_list.append(fecha_nacimiento)
+    listas.profesion_list.append(profesion)
+    listas.fecha_declaracion_list.append(fecha_declaracion)
+    listas.monto_a_declarar_list.append(monto_a_declarar)
+    listas.origen_fondos_list.append(origen_fondos)
     
    
-    datos.contador_contribuyentes += 1
+    listas.contador_contribuyentes += 1
 
 def calcular_estadisticas():
-    if datos.contador_contribuyentes == 0:
+    if  listas.contador_contribuyentes == 0:
         print("No se registraron contribuyentes.")
         return
 
-    # Cálculos de estadísticas
-    menor_edad = min(datos.edad_list)
-    mayor_edad = max(datos.edad_list)
-    promedio_edad = sum(datos.edad_list) / datos.contador_contribuyentes
-    fecha_mas_lejana = max(datos.fecha_declaracion_list)
-    fecha_mas_cercana = min(datos.fecha_declaracion_list)
-    menor_monto = min(datos.monto_a_declarar_list)
-    mayor_monto = max(datos.monto_a_declarar_list)
-    promedio_monto = sum(datos.monto_a_declarar_list) / datos.contador_contribuyentes
+    # Calculos 
+    menor_edad = min( listas.edad_list)
+    mayor_edad = max( listas.edad_list)
+    promedio_edad = sum( listas.edad_list) /  listas.contador_contribuyentes
+    fecha_mas_lejana = max( listas.fecha_declaracion_list)
+    fecha_mas_cercana = min( listas.fecha_declaracion_list)
+    menor_monto = min( listas.monto_a_declarar_list)
+    mayor_monto = max( listas.monto_a_declarar_list)
+    promedio_monto = sum( listas.monto_a_declarar_list) /  listas.contador_contribuyentes
 
-    # Ranking de profesiones
+    # Ranking profesiones
     ranking_profesiones = {}
-    for profesion in datos.profesion_list:
+    for profesion in listas.profesion_list:
         if profesion in ranking_profesiones:
             ranking_profesiones[profesion] += 1
         else:
             ranking_profesiones[profesion] = 1
 
-    # Ranking de origen de fondos
+    # Ranking origen de fondos
     ranking_origen_fondos = {}
-    for origen in datos.origen_fondos_list:
+    for origen in listas.origen_fondos_list:
         if origen in ranking_origen_fondos:
             ranking_origen_fondos[origen] += 1
         else:
             ranking_origen_fondos[origen] = 1
 
-    # Mostrar los resultados
-    print(f"\nTotal de personas registradas: {datos.contador_contribuyentes}")
+    # Muestra resultados :P
+    print(f"\nTotal de personas registradas: {listas.contador_contribuyentes}")
     print(f"Menor edad: {menor_edad}")
     print(f"Mayor edad: {mayor_edad}")
     print(f"Edad promedio: {promedio_edad:.2f}")

@@ -8,5 +8,5 @@ fecha_declaracion_list = []
 monto_a_declarar_list = []
 origen_fondos_list = []
 
-# Contador para el número de contribuyentes
+# Contador 
 contador_contribuyentes = 0
