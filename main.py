@@ -2,8 +2,9 @@ import listas
 import funciones
 
 def main():
-    
-    while True:
+    comenzar = input("Desea comenzar? (S/s)")
+    while (comenzar == "S" or comenzar == "s" ):
+        
         dni = input("Ingrese DNI: ")
         apellido = input("Ingrese Apellido: ")
         nombre = input("Ingrese Nombre: ")

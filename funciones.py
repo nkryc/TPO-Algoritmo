@@ -19,7 +19,6 @@ def calcular_estadisticas():
         print("No se registraron contribuyentes.")
         return
 
-    # Calculo de menor, mayor y promedio de edades
     menor_edad = float('inf')
     mayor_edad = float('-inf')
     suma_edades = 0
@@ -33,7 +32,6 @@ def calcular_estadisticas():
 
     promedio_edad = suma_edades / listas.contador_contribuyentes
 
-    # Calculo de fecha de declaración más lejana y más cercana
     fecha_mas_lejana = listas.fecha_declaracion_list[0]
     fecha_mas_cercana = listas.fecha_declaracion_list[0]
 
@@ -43,7 +41,6 @@ def calcular_estadisticas():
         if fecha < fecha_mas_cercana:
             fecha_mas_cercana = fecha
 
-    # Calculo de menor, mayor y promedio de montos
     menor_monto = float('inf')
     mayor_monto = float('-inf')
     suma_montos = 0
@@ -57,7 +54,6 @@ def calcular_estadisticas():
 
     promedio_monto = suma_montos / listas.contador_contribuyentes
 
-    # Ranking de profesiones
     ranking_profesiones = {}
     for profesion in listas.profesion_list:
         if profesion in ranking_profesiones:
@@ -65,7 +61,6 @@ def calcular_estadisticas():
         else:
             ranking_profesiones[profesion] = 1
 
-    # Ranking de origen de fondos
     ranking_origen_fondos = {}
     for origen in listas.origen_fondos_list:
         if origen in ranking_origen_fondos:
