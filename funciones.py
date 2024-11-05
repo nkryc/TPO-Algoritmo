@@ -21,14 +21,44 @@ def calcular_estadisticas():
         return
 
     # Calculos 
-    menor_edad = min( listas.edad_list)
-    mayor_edad = max( listas.edad_list)
-    promedio_edad = sum( listas.edad_list) /  listas.contador_contribuyentes
-    fecha_mas_lejana = max( listas.fecha_declaracion_list)
-    fecha_mas_cercana = min( listas.fecha_declaracion_list)
-    menor_monto = min( listas.monto_a_declarar_list)
-    mayor_monto = max( listas.monto_a_declarar_list)
-    promedio_monto = sum( listas.monto_a_declarar_list) /  listas.contador_contribuyentes
+    # Variables iniciales para el cálculo de edad
+menor_edad = float('inf')
+mayor_edad = float('-inf')
+suma_edades = 0
+
+# Calcular menor, mayor y promedio de edades
+for edad in datos.edad_list:
+    if edad < menor_edad:
+        menor_edad = edad
+    if edad > mayor_edad:
+        mayor_edad = edad
+    suma_edades += edad
+
+promedio_edad = suma_edades / datos.contador_contribuyentes
+
+# Variables iniciales para el cálculo de fechas de declaración
+fecha_mas_lejana = datos.fecha_declaracion_list[0]
+fecha_mas_cercana = datos.fecha_declaracion_list[0]
+
+for fecha in listas.fecha_declaracion_list:
+    if fecha > fecha_mas_lejana:
+        fecha_mas_lejana = fecha
+    if fecha < fecha_mas_cercana:
+        fecha_mas_cercana = fecha
+
+menor_monto = float('inf')
+mayor_monto = float('-inf')
+suma_montos = 0
+
+for monto in datos.monto_a_declarar_list:
+    if monto < menor_monto:
+        menor_monto = monto
+    if monto > mayor_monto:
+        mayor_monto = monto
+    suma_montos += monto
+
+promedio_monto = suma_montos / datos.contador_contribuyentes
+
 
     # Ranking profesiones
     ranking_profesiones = {}
